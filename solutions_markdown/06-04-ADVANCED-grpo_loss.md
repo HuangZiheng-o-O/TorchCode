@@ -50,7 +50,7 @@ $$
 
 ##### 代码骨架
 
-```py
+```python
 import torch
 
 def grpo_loss(old_logps, new_logps, ref_logps, rewards, group_ids,
@@ -72,7 +72,7 @@ $$
 A_i=\frac{r_i-\mu_g}{\sigma_g+\epsilon}
 $$
 
-```py
+```python
     for gid in group_ids.unique():
         mask = (group_ids == gid)
         r = rewards[mask]
@@ -89,7 +89,7 @@ $$
 A_i \text{ is treated as a constant}
 $$
 
-```py
+```python
     adv = adv.detach()
 ```
 
@@ -100,7 +100,7 @@ $$
 =\exp(\log \pi_{\text{new},i}-\log \pi_{\text{old},i})
 $$
 
-```py
+```python
     ratio = torch.exp(new_logps - old_logps)
 ```
 
@@ -110,7 +110,7 @@ $$
 L_1^{(i)}=\rho_i A_i
 $$
 
-```py
+```python
     obj1 = ratio * adv
 ```
 
@@ -121,7 +121,7 @@ L_2^{(i)}=
 \mathrm{clip}(\rho_i,1-\epsilon_{\text{clip}},1+\epsilon_{\text{clip}}),A_i
 $$
 
-```py
+```python
     obj2 = torch.clamp(ratio, 1 - clip_eps, 1 + clip_eps) * adv
 ```
 
@@ -133,7 +133,7 @@ L_{\text{policy}}
 -\frac{1}{B}\sum_{i=1}^{B}\min(L_1^{(i)},L_2^{(i)})
 $$
 
-```py
+```python
     policy_loss = -torch.min(obj1, obj2).mean()
 ```
 
@@ -148,7 +148,7 @@ L_{\text{KL}}
 \left(\log \pi_{\text{new},i}-\log \pi_{\text{ref},i}\right)
 $$
 
-```py
+```python
     kl_loss = (new_logps - ref_logps).mean()
 ```
 
@@ -158,12 +158,12 @@ $$
 L=L_{\text{policy}}+\beta L_{\text{KL}}
 $$
 
-```py
+```python
     loss = policy_loss + beta * kl_loss
     return loss
 ```
 
-```py
+```python
 import torch
 
 def grpo_loss(old_logps, new_logps, ref_logps, rewards, group_ids,
@@ -190,7 +190,7 @@ def grpo_loss(old_logps, new_logps, ref_logps, rewards, group_ids,
     return loss
 ```
 
-```py
+```python
 old_logps = torch.tensor([-0.2, -0.6, -1.1, -1.4])
 new_logps = torch.tensor([0.0, -0.5, -1.0, -1.5])
 ref_logps = torch.tensor([-0.1, -0.55, -1.05, -1.45])

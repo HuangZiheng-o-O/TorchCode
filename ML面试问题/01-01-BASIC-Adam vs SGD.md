@@ -32,6 +32,9 @@ $$
 m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t
 $$
 
+This equation defines an **exponentially weighted moving average (EWMA, Exponentially Weighted Moving Average)** of gradients.
+It computes a weighted average where recent gradients have more influence, while older gradients decay exponentially.
+
 这里  $g_t$  是第  $t$  步的当前梯度， $m_t$  是梯度的一阶矩估计，本质上就是“动量”，用于平滑梯度方向、减少震荡。
 
 Here,  $g_t$  is the current gradient at step  $t$ , and  $m_t$  is the first-moment estimate of the gradient, essentially the “momentum,” which smooths the gradient direction and reduces oscillation.
@@ -145,6 +148,3 @@ A more advanced interview phrasing is: **Adam behaves more like an “optimizati
 If you want a strong interview closing summary, you can say: **Adam is more common than SGD not because it is universally better, but because it combines momentum with adaptive learning rates, substantially reducing the difficulty of getting training to work, and it is especially advantageous for sparse gradients, uneven parameter scales, and fast early convergence; however, the trade-off is potentially worse final generalization, greater sensitivity to regularization design, and less “clean” late-stage convergence than SGD, which is why serious high-performance training still requires careful comparison among SGD, AdamW, and learning-rate scheduling strategies.**
 
 
-
----
-Powered by [ChatGPT Exporter](https://www.chatgptexporter.com)

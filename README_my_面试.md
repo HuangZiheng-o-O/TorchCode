@@ -4,16 +4,16 @@
 
 ### 01 BASIC
 
-| # | 面试题目 | 知识点 | 难度 |
-| :---: | :--- | :--- | :---: |
-| 01 | [[01-01-BASIC-Adam vs SGD]] | BASIC | ⭐ |
-| 02 | [[01-02-BASIC-Dropout Weight Initialization Gradient Accumulation]] | BASIC | ⭐ |
-| 03 | [[01-03-BASIC-KL 散度解释]] | BASIC | ⭐ |
-| 04 | [[01-04-BASIC-交叉熵与KL散度]] | BASIC | ⭐ |
-| 05 | [[01-05-BASIC-偏差方差权衡解析]] | BASIC | ⭐ |
-| 06 | [[01-06-BASIC-梯度问题与梯度裁剪]] | BASIC | ⭐ |
-| 07 | [[01-07-BASIC-激活函数对比]] | BASIC | ⭐ |
-| 08 | [[01-08-BASIC-过拟合及其缓解方法]] | BASIC | ⭐ |
+|  #  | 面试题目                                                                | 知识点   | 难度  |
+| :-: | :------------------------------------------------------------------ | :---- | :-: |
+| 01  | [[01-01-BASIC-Adam vs SGD]]                                         | BASIC |  ⭐  |
+| 02  | [[01-02-BASIC-Dropout Weight Initialization Gradient Accumulation]] | BASIC |  ⭐  |
+| 03  | [[01-03-BASIC-KL 散度解释]]                                             | BASIC |  ⭐  |
+| 04  | [[01-04-BASIC-交叉熵与KL散度]]                                            | BASIC |  ⭐  |
+| 05  | [[01-05-BASIC-偏差方差权衡解析]]                                            | BASIC |  ⭐  |
+| 06  | [[01-06-BASIC-梯度问题与梯度裁剪]]                                           | BASIC |  ⭐  |
+| 07  | [[01-07-BASIC-激活函数对比]]                                              | BASIC |  ⭐  |
+| 08  | [[01-08-BASIC-过拟合及其缓解方法]]                                           | BASIC |  ⭐  |
 
 ### 02 TRANSFORMER
 

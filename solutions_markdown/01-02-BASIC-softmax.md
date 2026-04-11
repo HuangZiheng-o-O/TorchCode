@@ -32,3 +32,8 @@ print("Ref:   ", torch.softmax(x, dim=-1))
 from torch_judge import check
 check("softmax")
 ```
+
+### 获取索引的方法
+result = x.max(dim=dim, keepdim=True)  
+x_max = result.values  
+x_idx = result.indices
